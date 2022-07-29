@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8"/>
+    <title>CRUD</title>
+</head>
+<body>
+<style>
+    th, td {
+        color: #736F6F;
+        padding: 7px 15px;
+        border: 1px solid #C6C3C3;
+        font-size: 22px;
+    }
+    tr:hover{
+        background: #eee;
+    }
+    .hoverNot:hover{
+        background: transparent !important;
+    }
+
+    table {
+        margin: 50px auto;
+        border-collapse: collapse;
+    }
+
+    a {
+        font-size: 16px;
+    }
+</style>
+<table>
+    <tr class="hoverNot">
+        <th>#</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Age</th>
+        <th>Sex</th>
+        <th colspan="2">Operations</th>
+    </tr>
+
+    <th:block th:each="user : ${userList}">
+        <tr>
+            <td th:text="${user.getId()}"></td>
+            <td th:text="${user.getName()}"></td>
+            <td th:text="${user.getSurname()}"></td>
+            <td th:text="${user.getAge()}"></td>
+            <td th:text="${user.getSex()}"></td>
+            <td>
+                <a href="user_info" th:href="@{/user_info(id=${user.getId()})}">update</a>
+            </td>
+            <td>
+                <a href="delete" th:href="@{/delete(id=${user.getId()})}">delete</a>
+            </td>
+        </tr>
+    </th:block>
+    <tr class="hoverNot" style="text-align: left; border: 1px solid transparent">
+        <td colspan="7">
+            <input type="button" value="add user" onclick="window.location.href='add'"></td>
+    </tr>
+</table>
+
+</body>
+</html>

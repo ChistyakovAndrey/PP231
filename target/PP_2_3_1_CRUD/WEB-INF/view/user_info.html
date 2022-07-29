@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style>
+    form{
+        margin:100px auto;
+        width:350px;
+        padding:25px 34px;
+        border: 1px solid #6B6868;
+        border-radius: 10px;
+        background: #eee;
+    }
+    input{
+        width:328px;
+        padding:3px 10px;
+        border:1px solid #6B6868;
+        height: 26px;
+        margin-bottom: 10px;
+    }
+    .submit{
+        width:100px;
+        margin-top:20px;
+        border:1px solid #B30606;
+        color:#B30606;
+    }
+</style>
+<form action="saveUser" th:modelAttribute="user">
+    <input type="hidden" th:value="${user.id}" name="id"><br>
+    <input type="text" th:value="${user.name}" placeholder="your name" name="name"><br>
+    <input type="text" th:value="${user.surname}" placeholder="your surname" name="surname"><br>
+    <input type="text" th:value="${user.age}" placeholder="your age" name="age"><br>
+    <input type="text" th:value="${user.sex}" placeholder="your sex" name="sex"><br>
+    <input class="submit" type="submit" value="submit">
+</form>
+</body>
+</html>
