@@ -32,7 +32,6 @@ public class UserDaoImpl implements UserDao {
         return getManager().createQuery("select u FROM User u").getResultList();
     }
     @Override
-    @Transactional
     public void addUser(User user) {
         entityManager.merge(user);
         entityManager.flush();
@@ -46,7 +45,6 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    @Transactional
     public void deleteUserById(int id) {
         String query = "delete from User where id = " + id;
         entityManager.createQuery(query).executeUpdate();
