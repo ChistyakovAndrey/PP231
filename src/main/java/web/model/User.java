@@ -9,20 +9,30 @@ import javax.persistence.*;
 @Entity
 @Table(name = "users")
 @Component
-@Scope("prototype")
+//@Scope("prototype")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    //@Column(name = "id")
     private int id;
-    @Column(name = "name")
+    //@Column(name = "name")
     private String name;
-    @Column(name = "surname")
+    //@Column(name = "surname")
     private String surname;
-    @Column(name = "age")
+    //@Column(name = "age")
     private Integer age;
-    @Column(name = "sex")
+    //@Column(name = "sex")
     private Character sex;
+    //private boolean isMarried;
+
+//    public boolean isMarried() {
+//        return isMarried;
+//    }
+
+//    public User setMarried(boolean married) {
+//        isMarried = married;
+//        return this;
+//    }
 
     public User() {
     }

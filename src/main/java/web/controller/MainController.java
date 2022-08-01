@@ -16,8 +16,11 @@ import java.util.List;
 @RequestMapping("/")
 public class MainController {
 
-    @Autowired
     UserService userService;
+    @Autowired
+    public MainController(UserService userService) {
+        this.userService = userService;
+    }
 
     @GetMapping
     public String getMainPage(Model model) {
